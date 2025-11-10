@@ -1099,3 +1099,4 @@ with tabs[6]:
 # End of app
 st.markdown("<hr><div class='small-muted'>MindCare Pro — demo version. Use responsibly. Not a replacement for clinical care.</div>", unsafe_allow_html=True)
 
+
