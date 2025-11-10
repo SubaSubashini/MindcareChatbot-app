@@ -22,7 +22,6 @@ torch
 transformers
 textblob
 spacy
-sqlite3
 openpyxl
 xgboost
 lightgbm
@@ -37,3 +36,4 @@ pdfkit
 python-docx
 pypandoc
 reportlab
+
