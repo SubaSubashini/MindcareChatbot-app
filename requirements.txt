@@ -36,6 +36,7 @@ pdfkit
 python-docx
 pypandoc
 reportlab
-sqlite3
+
+
 
 
