@@ -1,0 +1,177 @@
+/* ===== Base Page Setup ===== */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 80%, #001f3f, #000000 80%);
+  color: #e8f1ff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Fullscreen Animated Blue Gradient ===== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+[data-testid="stAppViewContainer"] {
+  background: linear-gradient(270deg, #1e3c72, #2a5298, #0072ff, #00c6ff);
+  background-size: 1200% 1200%;
+  animation: gradientShift 25s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Floating Bubbles (Full Dashboard Coverage) ===== */
+.bubble {
+  position: fixed;
+  bottom: -200px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  animation: floatUp 26s infinite ease-in;
+  z-index: 0;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.9; }
+  100% { transform: translateY(-120vh) scale(1.7); opacity: 0; }
+}
+
+/* Larger and slower bubbles */
+.bubble:nth-child(1) { width: 200px; height: 200px; left: 10%; animation-delay: 0s; }
+.bubble:nth-child(2) { width: 260px; height: 260px; left: 30%; animation-delay: 5s; }
+.bubble:nth-child(3) { width: 180px; height: 180px; left: 55%; animation-delay: 10s; }
+.bubble:nth-child(4) { width: 240px; height: 240px; left: 75%; animation-delay: 3s; }
+.bubble:nth-child(5) { width: 220px; height: 220px; left: 90%; animation-delay: 8s; }
+
+/* ===== Glass Effect Containers ===== */
+section, div[data-testid="stVerticalBlock"], div[data-testid="stHorizontalBlock"],
+div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-radius: 22px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+  padding: 25px;
+  z-index: 1;
+}
+
+/* ===== Sidebar ===== */
+[data-testid="stSidebar"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(14px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+[data-testid="stSidebar"] * {
+  color: #b7d9ff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+[data-testid="stSidebar"] *:hover {
+  color: #00c6ff !important;
+  text-shadow: 0 0 10px rgba(0,198,255,0.8);
+}
+
+/* ===== Headings ===== */
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(90deg, #00c6ff, #66a6ff, #b7d9ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hueShift 10s infinite linear;
+  text-shadow: 0 0 25px rgba(0,198,255,0.3);
+  transition: all 0.3s ease;
+}
+h1:hover {
+  transform: scale(1.04);
+  text-shadow: 0 0 35px rgba(0,198,255,0.8);
+}
+
+h2, h3 {
+  color: #000000;
+  text-align: center;
+  text-shadow: none;
+}
+h2:hover, h3:hover {
+  color: #111111;
+  text-shadow: none;
+}
+
+@keyframes hueShift {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(360deg); }
+}
+
+/* ===== Text Elements ===== */
+p, span, label, li, div[data-testid="stMarkdown"] {
+  color: #000000 !important;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+p:hover, span:hover, label:hover {
+  color: #00e5ff !important;
+  text-shadow: 0 0 12px rgba(0,229,255,0.8);
+}
+
+/* ===== Buttons ===== */
+.stButton button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #2a5298);
+  color: #ffffff;
+  border-radius: 14px;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+.stButton button:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #66a6ff, #00c6ff);
+  box-shadow: 0 0 25px rgba(0,198,255,0.7);
+}
+
+/* ===== Inputs, Dropdowns, and Text Areas ===== */
+.stTextInput input, .stSelectbox select, .stTextArea textarea {
+  background: rgba(255, 255, 255, 0.12);
+  color: #eaf4ff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 12px;
+}
+.stTextInput input:focus, .stSelectbox select:focus, .stTextArea textarea:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 12px #00c6ff;
+  outline: none;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#00c6ff, #0072ff);
+  border-radius: 10px;
+}
+
+/* ===== Hide Footer/Header ===== */
+[data-testid="stHeader"], footer {
+  background: transparent !important;
+  visibility: hidden;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  h2, h3 { font-size: 1.2rem; }
+  .stButton button { width: 100%; padding: 1em; }
+}
+
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 1.6rem; }
+    h2, h3 { font-size: 1.2rem; }
+    .stButton button { width: 100%; padding: 1em; }
+}
