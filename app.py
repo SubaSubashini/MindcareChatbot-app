@@ -301,7 +301,7 @@ if auth_choice == "Sign Up":
 elif auth_choice == "About":
     st.sidebar.markdown("*MindCare Pro*\n- Demo capstone project\n- Text + Voice + Analytics")
     st.stop()
-st.title("MindCare Pro - MultiModel Mental Health Chatbot")
+st.title("🧠MindCare Pro Analytics - MultiModel Mental Health AI Chatbot💬...")
 # Login
 st.sidebar.subheader("Login")
 username = st.sidebar.text_input("Username", key="login_user")
@@ -1098,6 +1098,7 @@ with tabs[6]:
 
 # End of app
 st.markdown("<hr><div class='small-muted'>MindCare Pro — demo version. Use responsibly. Not a replacement for clinical care.</div>", unsafe_allow_html=True)
+
 
 
 
